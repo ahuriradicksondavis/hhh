@@ -287,7 +287,132 @@ nav{
   border:1px solid var(--border);
 }
 .ha-secondary:hover{border-color:var(--g0);color:var(--g0)}
+/* ── MOBILE RESPONSIVENESS ────────────────────── */
 
+@media (max-width: 1024px) {
+  /* Layout Adjustments */
+  .hero-body {
+    grid-template-columns: 1fr; /* Stack the sidebar below hero content */
+    min-height: auto;
+  }
+  
+  .hero-right {
+    border-left: none;
+    border-top: 1px solid var(--border);
+    height: auto;
+    padding: 40px 20px;
+    background: var(--bg2);
+  }
+
+  .hero-left {
+    padding: 100px 20px 40px;
+  }
+
+  /* Navigation adjustments */
+  .nav-tabs {
+    display: none; /* Hide desktop tabs, usually replaced by a burger menu */
+  }
+  
+  .nav-search input {
+    width: 100px;
+  }
+  
+  .nav-search input:focus {
+    width: 140px;
+  }
+
+  /* Typography Scaling */
+  .hd-main {
+    font-size: 18vw; /* Scale big titles to screen width */
+    letter-spacing: -1px;
+  }
+  
+  .hd-main .filled {
+    margin-left: 20px;
+  }
+
+  /* Grid Layouts */
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .section {
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Disable custom cursor on mobile for better touch performance */
+  #cur, #curTrail, #curText {
+    display: none !important;
+  }
+  
+  body {
+    cursor: auto !important;
+  }
+
+  /* Header adjustments */
+  .logo {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+  }
+  
+  .nav-logo-block {
+    min-width: auto;
+    padding: 0 15px;
+  }
+
+  .nav-cta {
+    padding: 0 15px;
+    font-size: 0.6rem;
+  }
+
+  /* Hero Content */
+  .hero-desc-row {
+    grid-template-columns: 1fr; /* Stack description and facts */
+    gap: 20px;
+  }
+
+  .sec-h {
+    font-size: 3.5rem;
+  }
+
+  /* Cinema Banner (Featured) */
+  .cinema-banner {
+    height: 400px;
+  }
+  
+  .cb-content {
+    padding: 20px;
+  }
+  
+  .cb-title {
+    font-size: 3rem;
+  }
+
+  /* Video Player Area */
+  .player-container {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .player-main {
+    height: 56.25vw; /* 16:9 Aspect Ratio */
+  }
+  
+  .player-queue {
+    width: 100%;
+    height: 300px;
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Audio Interface */
+  .audio-main {
+    grid-template-columns: 1fr;
+  }
+}
 /* HERO RIGHT PANEL */
 .hero-right{
   border-left:1px solid var(--border);
@@ -1890,3 +2015,4 @@ init();
 </script>
 </body>
 </html>
+
